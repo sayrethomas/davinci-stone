@@ -1,0 +1,21 @@
+{
+  "slug": "granite",
+  "name": "Granite",
+  "headline": "Timeless Elegance, Unmatched Durability",
+  "description": "There's never been an easier or more affordable way to add lasting value and timeless elegance to your home. Granite delivers a level of quality and richness that simply can't be matched.",
+  "longDescription": "The natural beauty of granite brings warmth, character, and refined sophistication to any space. Exceptionally durable and resistant to heat, scratches, and stains, granite is the premier choice for kitchen countertops, bathroom vanities, and accent surfaces. Each slab is uniquely patterned by nature — no two installations are alike.",
+  "properties": {
+    "hardness": "6-7 Mohs",
+    "maintenance": "Seal annually",
+    "heatResistance": "Excellent",
+    "priceTier": "$$–$$$"
+  },
+  "colors": [
+    { "name": "Absolute Black", "hex": "#1a1a1a" },
+    { "name": "Kashmir White", "hex": "#e8e4df" },
+    { "name": "Santa Cecilia", "hex": "#c4a97d" },
+    { "name": "Giallo Ornamental", "hex": "#d4c5a0" },
+    { "name": "Blue Pearl", "hex": "#4a5568" },
+    { "name": "Tan Brown", "hex": "#8b6f47" }
+  ]
+}

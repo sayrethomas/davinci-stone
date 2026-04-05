@@ -1,0 +1,21 @@
+{
+  "slug": "quartz",
+  "name": "Quartz",
+  "headline": "Endless Color, Effortless Beauty",
+  "description": "Color, color, and more color! Quartz has become a favorite choice for homeowners — and for good reason. Create a seamless design flow throughout your home.",
+  "longDescription": "One of quartz's greatest advantages is the ability to create a seamless design flow throughout your home. From kitchen countertops to dining and living spaces, quartz makes it easy to coordinate surfaces with the rest of your décor. Engineered for consistency, quartz offers the look of natural stone with superior durability and zero maintenance sealing.",
+  "properties": {
+    "hardness": "7 Mohs",
+    "maintenance": "No sealing required",
+    "heatResistance": "Good (use trivets)",
+    "priceTier": "$$–$$$$"
+  },
+  "colors": [
+    { "name": "Calacatta Gold", "hex": "#f5f0eb" },
+    { "name": "Carrara Mist", "hex": "#e0ddd8" },
+    { "name": "Midnight Black", "hex": "#1a1a1a" },
+    { "name": "Coastal Grey", "hex": "#9ca3af" },
+    { "name": "Arctic White", "hex": "#fafafa" },
+    { "name": "Sahara Beige", "hex": "#d2b48c" }
+  ]
+}
