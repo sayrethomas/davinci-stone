@@ -26,7 +26,7 @@ export default function About() {
               />
             </div>
             {/* Gold accent block */}
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gold/10 -z-10" />
+            <div className="absolute -bottom-4 right-0 w-32 h-32 bg-gold/10 -z-10" />
           </motion.div>
 
           {/* Text side */}
