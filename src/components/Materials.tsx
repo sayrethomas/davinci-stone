@@ -57,7 +57,7 @@ export default function Materials() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/60 to-charcoal/30" />
 
                   {/* Content overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8">
