@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-[85vh] min-h-[550px] flex items-center justify-center overflow-hidden"
     >
       {/* Background — dark stone texture overlay */}
       <div className="absolute inset-0 bg-charcoal">
@@ -23,14 +23,14 @@ export default function Hero() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="w-20 h-[1px] bg-gold mx-auto mb-10"
+          className="w-20 h-[1px] bg-gold mx-auto mb-6"
         />
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-cream leading-tight tracking-tight"
+          className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-8xl text-cream leading-[1.1] tracking-tight"
         >
           {siteConfig.tagline}
         </motion.h1>
@@ -39,7 +39,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-6 text-cream/70 text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide"
+          className="mt-4 text-cream/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide"
         >
           {siteConfig.subTagline}
         </motion.p>
@@ -48,7 +48,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
             href="#visualizer"
