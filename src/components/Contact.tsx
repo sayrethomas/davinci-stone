@@ -31,7 +31,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 md:py-28 bg-charcoal">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function Contact() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -92,7 +92,7 @@ export default function Contact() {
                   )}
                 </div>
 
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <input
                       {...register("email", {

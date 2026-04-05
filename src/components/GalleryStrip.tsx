@@ -117,7 +117,6 @@ const galleryItems = [
 
 type Filter = "all" | "kitchen" | "bathroom";
 
-const CARD_WIDTH = 420; // px including gap
 const NAV_PAUSE_MS = 3000;
 
 export default function GalleryStrip() {
@@ -152,6 +151,20 @@ export default function GalleryStrip() {
       animId = requestAnimationFrame(tick);
     };
 
+    // Pause auto-scroll while user is touch-dragging
+    const onTouchStart = () => {
+      pausedUntil.current = Infinity;
+    };
+    const onTouchEnd = () => {
+      // Resume after a short delay so user's flick settles
+      setTimeout(() => {
+        posRef.current = el.scrollLeft;
+        pausedUntil.current = Date.now() + 1500;
+      }, 300);
+    };
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchend", onTouchEnd);
+
     // Small delay so images load and scrollWidth is accurate
     const startTimer = setTimeout(() => {
       posRef.current = el.scrollLeft;
@@ -161,6 +174,8 @@ export default function GalleryStrip() {
     return () => {
       clearTimeout(startTimer);
       cancelAnimationFrame(animId);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchend", onTouchEnd);
     };
   }, [filter]);
 
@@ -170,8 +185,10 @@ export default function GalleryStrip() {
       if (!el) return;
       // Pause auto-scroll
       pausedUntil.current = Date.now() + NAV_PAUSE_MS;
-      // Smooth jump by one card width
-      const delta = direction === "right" ? CARD_WIDTH : -CARD_WIDTH;
+      // Calculate card width from actual first child
+      const firstCard = el.firstElementChild as HTMLElement | null;
+      const cardWidth = firstCard ? firstCard.offsetWidth + 20 : 320; // 20 = gap-5
+      const delta = direction === "right" ? cardWidth : -cardWidth;
       el.scrollBy({ left: delta, behavior: "smooth" });
       // Sync posRef after the smooth scroll settles
       setTimeout(() => {
@@ -182,8 +199,8 @@ export default function GalleryStrip() {
   );
 
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-cream overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="gallery" className="py-14 md:py-28 bg-cream overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -200,13 +217,13 @@ export default function GalleryStrip() {
         </motion.div>
 
         {/* Filter chips + nav arrows */}
-        <div className="flex items-center justify-between mb-10">
-          <div className="flex gap-3">
+        <div className="flex items-center justify-between mb-8 sm:mb-10 gap-4">
+          <div className="flex gap-2 sm:gap-3 flex-wrap">
             {(["all", "kitchen", "bathroom"] as Filter[]).map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`px-5 py-2 text-xs tracking-[0.2em] uppercase transition-all duration-300 ${
+                className={`px-3 sm:px-5 py-2 text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 ${
                   filter === f
                     ? "bg-charcoal text-cream"
                     : "bg-transparent text-charcoal/60 border border-charcoal/20 hover:border-charcoal/40"
@@ -249,7 +266,7 @@ export default function GalleryStrip() {
           {[...filtered, ...filtered].map((item, idx) => (
             <div
               key={`${item.id}-${idx}`}
-              className="flex-shrink-0 w-[300px] md:w-[400px] h-[250px] md:h-[320px] relative group overflow-hidden bg-light-gray"
+              className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[250px] md:h-[320px] relative group overflow-hidden bg-light-gray"
             >
               <Image
                 src={item.src}

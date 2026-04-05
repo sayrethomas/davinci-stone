@@ -189,7 +189,7 @@ export default function RequestMeasurement() {
                   </span>
                 )}
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <input
                     {...register("email", {
@@ -325,7 +325,7 @@ export default function RequestMeasurement() {
               <h2 className="font-serif text-2xl text-charcoal mb-6">
                 Schedule Your Visit
               </h2>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="text-xs text-warm-gray tracking-wider uppercase block mb-2">
                     Preferred Date

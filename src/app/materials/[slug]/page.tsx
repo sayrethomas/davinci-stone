@@ -48,14 +48,14 @@ export default function MaterialPage({
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent" />
-        <div className="relative z-10 h-full flex flex-col justify-end max-w-5xl mx-auto px-6 pb-12">
+        <div className="relative z-10 h-full flex flex-col justify-end max-w-5xl mx-auto px-4 sm:px-6 pb-12">
           <Link
             href="/#materials"
             className="text-cream/60 hover:text-gold text-sm tracking-wider uppercase mb-4 transition-colors inline-flex items-center gap-2"
           >
             <span>&larr;</span> All Materials
           </Link>
-          <h1 className="font-serif text-5xl md:text-7xl text-cream">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl text-cream">
             {mat.name}
           </h1>
           <p className="text-cream/70 text-xl font-light mt-3 max-w-lg">
@@ -65,8 +65,8 @@ export default function MaterialPage({
       </div>
 
       {/* Content */}
-      <div className="max-w-5xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-16">
           {/* Description */}
           <div className="md:col-span-2 space-y-6">
             <p className="text-warm-gray text-lg leading-relaxed font-light">
@@ -91,7 +91,7 @@ export default function MaterialPage({
           </div>
 
           {/* Properties */}
-          <div className="bg-white p-8 space-y-5">
+          <div className="bg-white p-5 sm:p-8 space-y-5">
             <h3 className="font-serif text-xl text-charcoal">Properties</h3>
             {Object.entries(mat.properties).map(([key, value]) => (
               <div key={key} className="flex justify-between border-b border-charcoal/10 pb-3">

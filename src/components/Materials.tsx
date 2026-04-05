@@ -16,7 +16,7 @@ const materials = [graniteData, quartzData];
 export default function Materials() {
   return (
     <section id="materials" className="py-20 md:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,8 +60,8 @@ export default function Materials() {
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
 
                   {/* Content overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="font-serif text-3xl text-cream">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8">
+                    <h3 className="font-serif text-2xl sm:text-3xl text-cream">
                       {mat.name}
                     </h3>
                     <p className="text-cream/70 mt-2 text-sm font-light max-w-sm">

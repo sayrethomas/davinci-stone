@@ -9,7 +9,7 @@ export default function AIVisualizerFrame() {
 
   return (
     <section id="visualizer" className="relative bg-charcoal py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function AIVisualizerFrame() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative w-full rounded-sm overflow-hidden shadow-2xl"
-          style={{ minHeight: "500px", height: "70vh", maxHeight: "800px" }}
+          style={{ minHeight: "300px", height: "clamp(300px, 60vh, 800px)" }}
         >
           {/* Loading skeleton */}
           {!loaded && (

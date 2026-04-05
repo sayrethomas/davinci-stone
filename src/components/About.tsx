@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function About() {
   return (
     <section id="about" className="py-20 md:py-28 bg-cream">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Image side */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -66,7 +66,7 @@ export default function About() {
             </div>
 
             {/* Trust signals */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-charcoal/10">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-12 pt-8 border-t border-charcoal/10">
               <div>
                 <div className="font-serif text-3xl text-charcoal">10+</div>
                 <div className="text-warm-gray text-xs tracking-[0.15em] uppercase mt-1">
