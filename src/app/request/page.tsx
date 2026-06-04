@@ -44,9 +44,12 @@ export default function RequestMeasurement() {
   };
 
   const onSubmit = async (data: MeasurementFormData) => {
-    // TODO: Wire up to Resend / Formspree / API route
-    console.log("Measurement request:", data);
-    await new Promise((r) => setTimeout(r, 1000));
+    const res = await fetch("/api/measurement", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error("Failed to send");
     setSubmitted(true);
   };
 

@@ -22,10 +22,12 @@ export default function Contact() {
   } = useForm<ContactFormData>();
 
   const onSubmit = async (data: ContactFormData) => {
-    // TODO: Wire up to Resend / Formspree / API route
-    console.log("Contact form submitted:", data);
-    // Simulate submission
-    await new Promise((r) => setTimeout(r, 1000));
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error("Failed to send");
     setSubmitted(true);
   };
 
