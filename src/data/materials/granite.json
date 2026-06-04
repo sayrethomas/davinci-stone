@@ -10,12 +10,15 @@
     "heatResistance": "Excellent",
     "priceTier": "$$–$$$"
   },
-  "colors": [
-    { "name": "Absolute Black", "hex": "#1a1a1a" },
-    { "name": "Kashmir White", "hex": "#e8e4df" },
-    { "name": "Santa Cecilia", "hex": "#c4a97d" },
-    { "name": "Giallo Ornamental", "hex": "#d4c5a0" },
-    { "name": "Blue Pearl", "hex": "#4a5568" },
-    { "name": "Tan Brown", "hex": "#8b6f47" }
+  "slabs": [
+    { "name": "Giallo Ornament", "src": "/images/materials/granite/giallo-ornament.jpeg" },
+    { "name": "Himalaya White", "src": "/images/materials/granite/himalaya-white.jpg" },
+    { "name": "Ashen White", "src": "/images/materials/granite/ashen-white.jpg" },
+    { "name": "Bengal White", "src": "/images/materials/granite/bengal-white.jpg" },
+    { "name": "New Caledonia", "src": "/images/materials/granite/new-caledonia.webp" },
+    { "name": "Steel Grey", "src": "/images/materials/granite/steel-grey.jpg" },
+    { "name": "Nero Mist", "src": "/images/materials/granite/nero-mist.jpg" },
+    { "name": "Black Pearl", "src": "/images/materials/granite/black-pearl.jpg" },
+    { "name": "Bianco Antico", "src": "/images/materials/granite/bianco-antico.jpg" }
   ]
 }

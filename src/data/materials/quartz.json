@@ -10,12 +10,21 @@
     "heatResistance": "Good (use trivets)",
     "priceTier": "$$–$$$$"
   },
-  "colors": [
-    { "name": "Calacatta Gold", "hex": "#f5f0eb" },
-    { "name": "Carrara Mist", "hex": "#e0ddd8" },
-    { "name": "Midnight Black", "hex": "#1a1a1a" },
-    { "name": "Coastal Grey", "hex": "#9ca3af" },
-    { "name": "Arctic White", "hex": "#fafafa" },
-    { "name": "Sahara Beige", "hex": "#d2b48c" }
+  "slabs": [
+    { "name": "Miami Vena", "src": "/images/materials/quartz/miami-vena.jpg" },
+    { "name": "Arctic White", "src": "/images/materials/quartz/arctic-white.jpg" },
+    { "name": "Frost White", "src": "/images/materials/quartz/frost-white.jpg" },
+    { "name": "Alabaster White", "src": "/images/materials/quartz/alabaster-white.jpg" },
+    { "name": "Cashmere Taj", "src": "/images/materials/quartz/cashmere-taj.jpg" },
+    { "name": "Calacatta Elysio", "src": "/images/materials/quartz/calacatta-elysio.jpg" },
+    { "name": "Calacatta Idillio", "src": "/images/materials/quartz/calacatta-idillio.jpg" },
+    { "name": "Calacatta Laza", "src": "/images/materials/quartz/calacatta-laza.jpg" },
+    { "name": "Carrara Breve", "src": "/images/materials/quartz/carrara-breve.jpg" },
+    { "name": "Snow White", "src": "/images/materials/quartz/snow-white.jpg" },
+    { "name": "Sparkling White", "src": "/images/materials/quartz/sparkling-white.jpg" },
+    { "name": "Iced White", "src": "/images/materials/quartz/iced-white.jpg" },
+    { "name": "Peppercorn White", "src": "/images/materials/quartz/peppercorn-white.jpg" },
+    { "name": "Iced Gray", "src": "/images/materials/quartz/iced-gray.jpg" },
+    { "name": "Manhattan Gray", "src": "/images/materials/quartz/manhattan-gray.jpg" }
   ]
 }

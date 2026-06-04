@@ -106,20 +106,25 @@ export default function MaterialPage({
           </div>
         </div>
 
-        {/* Color swatches */}
+        {/* Available slabs */}
         <div className="mt-16">
           <h3 className="font-serif text-2xl text-charcoal mb-8">
-            Available Colors
+            Available Slabs
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-            {mat.colors.map((color) => (
-              <div key={color.name} className="group text-center">
-                <div
-                  className="aspect-square rounded-sm border border-charcoal/10 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-                  style={{ backgroundColor: color.hex }}
-                />
+            {mat.slabs.map((slab) => (
+              <div key={slab.name} className="group text-center">
+                <div className="aspect-square relative overflow-hidden rounded-sm border border-charcoal/10 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg">
+                  <Image
+                    src={slab.src}
+                    alt={slab.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 150px"
+                  />
+                </div>
                 <p className="text-charcoal text-xs mt-3 tracking-wider">
-                  {color.name}
+                  {slab.name}
                 </p>
               </div>
             ))}
