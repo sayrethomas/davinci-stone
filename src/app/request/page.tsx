@@ -26,6 +26,7 @@ interface MeasurementFormData {
 export default function RequestMeasurement() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const {
     register,
@@ -44,13 +45,18 @@ export default function RequestMeasurement() {
   };
 
   const onSubmit = async (data: MeasurementFormData) => {
-    const res = await fetch("/api/measurement", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    if (!res.ok) throw new Error("Failed to send");
-    setSubmitted(true);
+    setSubmitError(false);
+    try {
+      const res = await fetch("/api/measurement", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    }
   };
 
   const inputClass =
@@ -383,6 +389,16 @@ export default function RequestMeasurement() {
                   {isSubmitting ? "Submitting..." : "Submit Request"}
                 </button>
               </div>
+              {submitError && (
+                <p className="text-red-500 text-sm font-light pt-2" role="alert">
+                  Something went wrong submitting your request. Please try again
+                  or call us at{" "}
+                  <a href={siteConfig.phoneHref} className="text-gold underline">
+                    {siteConfig.phone}
+                  </a>
+                  .
+                </p>
+              )}
             </motion.div>
           )}
         </form>

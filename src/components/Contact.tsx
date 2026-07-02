@@ -15,6 +15,7 @@ interface ContactFormData {
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const {
     register,
     handleSubmit,
@@ -22,13 +23,18 @@ export default function Contact() {
   } = useForm<ContactFormData>();
 
   const onSubmit = async (data: ContactFormData) => {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    if (!res.ok) throw new Error("Failed to send");
-    setSubmitted(true);
+    setSubmitError(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    }
   };
 
   return (
@@ -163,6 +169,17 @@ export default function Contact() {
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
+
+                {submitError && (
+                  <p className="text-red-400 text-sm font-light" role="alert">
+                    Something went wrong sending your message. Please try again
+                    or call us at{" "}
+                    <a href={siteConfig.phoneHref} className="text-gold underline">
+                      {siteConfig.phone}
+                    </a>
+                    .
+                  </p>
+                )}
               </form>
             )}
           </motion.div>

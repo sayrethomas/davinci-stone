@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
   }
 
   const { error } = await resend.emails.send({
-    from: "DaVinci Stone <onboarding@resend.dev>",
+    from: "DaVinci Stone <contact@davincistoneid.com>",
     to: "info@davincistoneidaho.com",
     replyTo: email,
     subject: `New Contact Form: ${name}${projectType ? ` — ${projectType}` : ""}`,
