@@ -16,7 +16,7 @@ export const siteConfig = {
   },
   hours: "Mon–Fri 9:00 AM – 5:00 PM | Sat by Appointment",
   // TODO: Replace with actual AI visualizer tool URL
-  visualizerUrl: "https://your.renvision.build/r/acme?embed=1",
+  visualizerUrl: "https://your.renvision.build/r/davinci-stone?embed=1",
   social: {
     facebook: "https://www.facebook.com/davincistoneidaho",
   },
