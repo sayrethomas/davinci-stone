@@ -4,7 +4,7 @@ export const siteConfig = {
   subTagline: "Visualize your space — then let us build it.",
   phone: "208.375.6555",
   phoneHref: "tel:+12083756555",
-  email: "info@davincistoneidaho.com",
+  email: "matth@davincistoneidaho.com",
   address: {
     street: "11522 W. Fairview Ave",
     city: "Boise",
